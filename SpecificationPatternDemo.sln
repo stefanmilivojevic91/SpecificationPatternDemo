@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{DF84CB8A-7CA6-4DCB-A373-520DA883643B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{DF84CB8A-7CA6-4DCB-A373-520DA883643B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{8DA8EAEC-C290-4DB3-BA45-61E33F4B485B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{8DA8EAEC-C290-4DB3-BA45-61E33F4B485B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{BB03CDBC-671E-4859-AEEE-3C43843BF33F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{BB03CDBC-671E-4859-AEEE-3C43843BF33F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{8DEE5D13-27B3-4276-B03A-417B0DB80817}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BB03CDBC-671E-4859-AEEE-3C43843BF33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB03CDBC-671E-4859-AEEE-3C43843BF33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB03CDBC-671E-4859-AEEE-3C43843BF33F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DEE5D13-27B3-4276-B03A-417B0DB80817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEE5D13-27B3-4276-B03A-417B0DB80817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEE5D13-27B3-4276-B03A-417B0DB80817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEE5D13-27B3-4276-B03A-417B0DB80817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
