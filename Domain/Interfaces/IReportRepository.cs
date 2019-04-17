@@ -1,18 +1,25 @@
-﻿using Domain.Dtos;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Domain.Shared;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
     public interface IReportRepository
     {
-        IQueryable<Report> GetList(ISpecification<Report> specification);
+        IQueryable<Report> Get(ISpecification<Report> specification);
 
-        Task<IEnumerable<ReportDto>> Execute(IQueryable<ReportDto> query);
+        Task<List<T>> ToListAsync<T>(IQueryable<T> query);
+
+        Task<T> SingleOrDefaultAsync<T>(IQueryable<T> query);
+
+        Task<int> CountAsync(IQueryable<Report> query);
+
+        void AddEntity(Report report);
+
+        void RemoveEntity(Report report);
+
+        Task SaveChangesAsync();
     }
 }

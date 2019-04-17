@@ -18,15 +18,40 @@ namespace Data.Repositories
             _databaseContext = databaseContext;
         }
 
-        public IQueryable<Report> GetList(ISpecification<Report> specification)
+        public Task<int> CountAsync(IQueryable<Report> query)
+        {
+            return query.CountAsync();
+        }
+
+        public Task<List<T>> ToListAsync<T>(IQueryable<T> query)
+        {
+            return query.ToListAsync();
+        }
+
+        public IQueryable<Report> Get(ISpecification<Report> specification)
         {
             return _databaseContext.Set<Report>()
                                    .Where(specification.Predicate);
         }
 
-        public async Task<IEnumerable<ReportDto>> Execute(IQueryable<ReportDto> query)
+        public void AddEntity(Report report)
         {
-            return await query.ToListAsync();
+            _databaseContext.Reports.Add(report);
+        }
+
+        public Task SaveChangesAsync()
+        {
+            return _databaseContext.SaveChangesAsync();
+        }
+
+        public Task<T> SingleOrDefaultAsync<T>(IQueryable<T> query)
+        {
+            return query.SingleOrDefaultAsync();
+        }
+
+        public void RemoveEntity(Report report)
+        {
+            _databaseContext.Reports.Remove(report);
         }
     }
 }

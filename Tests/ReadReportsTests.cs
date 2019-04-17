@@ -3,6 +3,7 @@ using Domain.Entities;
 using Domain.Interfaces;
 using Domain.Shared;
 using Domain.UseCases.Reports;
+using Domain.UseCases.Reports.Read;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
@@ -46,11 +47,11 @@ namespace Tests
                 }
             };
 
-            _reportRepositoryMock.Setup(item => item.GetList(It.IsAny<ISpecification<Report>>()))
+            _reportRepositoryMock.Setup(item => item.Get(It.IsAny<ISpecification<Report>>()))
                 .Returns((ISpecification<Report> specification) => mockedReports.AsQueryable().Where(specification.Predicate));
 
-            _reportRepositoryMock.Setup(item => item.Execute(It.IsAny<IQueryable<ReportDto>>()))
-                .Returns((IQueryable<ReportDto> reports) => Task.FromResult(reports.AsEnumerable()));
+            _reportRepositoryMock.Setup(item => item.ToListAsync(It.IsAny<IQueryable<ReportDto>>()))
+                .Returns((IQueryable<ReportDto> reports) => Task.FromResult(reports.ToList()));
 
             var request = new ReadReportsRequest
             {

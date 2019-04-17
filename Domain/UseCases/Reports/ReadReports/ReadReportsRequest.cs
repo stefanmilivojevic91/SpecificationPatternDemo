@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.UseCases.Reports
+namespace Domain.UseCases.Reports.Read
 {
     public class ReadReportsRequest
     {
